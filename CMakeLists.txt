@@ -28,11 +28,11 @@ if(NOT CYGWIN)
 endif()
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
-FIND_PACKAGE(Threads REQUIRED)
+find_package(Threads REQUIRED)
 
 # Use the package PkgConfig to detect (any version) of GTK+ headers/library files
-FIND_PACKAGE(PkgConfig REQUIRED)
-PKG_CHECK_MODULES(GTKMM REQUIRED gtkmm-3.0)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
