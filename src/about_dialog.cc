@@ -32,7 +32,7 @@ AboutDialog::AboutDialog(Gtk::Window& parent) {
 
   set_transient_for(parent);
   set_program_name("WineGui");
-  set_title("About WineGUI");
+  set_comments("The most user-friendly WINE manager.");
   set_logo(logo.get_pixbuf());
   set_authors(devs);
   set_artists(devs);
