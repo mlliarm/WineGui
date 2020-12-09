@@ -42,6 +42,9 @@ class AboutDialog : public Gtk::AboutDialog
 public:
   explicit AboutDialog(Gtk::Window& parent);
   virtual ~AboutDialog();
+
+  void run_dialog();
+  void hide_dialog(int response);
   
   static std::string GetVersion();
 protected:
