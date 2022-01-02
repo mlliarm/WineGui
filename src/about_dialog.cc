@@ -3,7 +3,7 @@
  *
  * \file    about_dialog.cc
  * \brief   The About dialog
- * \author  Melroy van den Berg <webmaster1989@gmail.com>
+ * \author  Melroy van den Berg <melroy@melroy.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
@@ -20,6 +20,7 @@
  */
 #include "about_dialog.h"
 #include "helper.h"
+#include "project_config.h"
 
 /**
  * \brief Contructor
@@ -38,18 +39,24 @@ AboutDialog::AboutDialog(Gtk::Window &parent)
     set_logo(logo.get_pixbuf());
     set_authors(devs);
     set_artists(devs);
-    set_version(VERSION);
-    set_copyright("Copyright © 2019-2020 Melroy van den Berg");
+    set_version(PROJECT_VER);
+    set_copyright("Copyright © 2019-2021 Melroy van den Berg");
     set_license_type(Gtk::LICENSE_AGPL_3_0);
 }
 
 AboutDialog::~AboutDialog() {}
 
+/**
+ * \brief Open about dialog
+ */
 void AboutDialog::run_dialog()
 {
     run();
 }
 
+/**
+ * \brief Close the about dialog
+ */
 void AboutDialog::hide_dialog(__attribute__((unused)) int response)
 {
     hide();
@@ -61,5 +68,5 @@ void AboutDialog::hide_dialog(__attribute__((unused)) int response)
  */
 std::string AboutDialog::GetVersion()
 {
-    return VERSION;
+    return PROJECT_VER;
 }
